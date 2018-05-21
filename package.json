@@ -1,0 +1,50 @@
+{
+  "name": "fuckingaround",
+  "description": "A Vue.js project",
+  "version": "1.0.0",
+  "author": "mikepawlak <mpawlak719@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production node ./server/bin/www",
+    "dev:server": "NODE_ENV=development nodemon ./server/bin/www",
+    "dev": "cross-env NODE_ENV=development webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bulma": "^0.7.0",
+    "bulma-tooltip": "^1.0.4",
+    "express": "^4.16.3",
+    "express-hbs": "^1.0.4",
+    "express-validator": "^5.0.3",
+    "hbs": "~4.0.1",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.8.3",
+    "nodemailer": "^4.6.4",
+    "sass-loader": "^6.0.7",
+    "vue": "^2.5.11",
+    "vue-carousel": "^0.7.2",
+    "vue-router": "^3.0.1",
+    "vue-typer": "^1.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "nodemon": "^1.17.2",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

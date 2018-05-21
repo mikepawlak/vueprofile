@@ -1,0 +1,97 @@
+/* bulma overrides and bulma */
+$primary: #10363a
+$danger: #ef5b1f
+$white: #f2f2f2
+
+$footer-background-color: $primary
+
+@import '~bulma/bulma.sass'
+@import '~bulma-tooltip'
+
+
+$phone-width: 500px
+$tablet-width: 768px
+$desktop-width: 1024px
+
+@mixin phone
+  @media (max-width: #{$phone-width - 1px})
+    @content;
+
+@mixin tablet
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+    @content;
+
+
+@mixin desktop
+  @media (min-width: #{$desktop-width})
+    @content;
+
+
+
+
+/* main styles - NOTE: component exclusive styles belong in their respective component.vue file. */
+::selection
+  background-color: #3cb2bd
+a
+  color: #3cb2bd
+footer a:hover
+  color: $white
+
+.load-main
+  display: none
+.has-bg-image
+  background: url("/public/dist/header-background.jpg") center center
+  background-size: cover;
+  .hero-body
+    background: rgba(0,0,0,.6);
+  .hero-foot
+    background: #0A1F1D
+    opacity: .8
+    .tabs
+      opacity: 1
+.title
+  font-size: 65px
+  font-family: Roboto Mono, monospace
+  span:hover
+    cursor: pointer
+
+.subtitle
+  padding-left: 160px
+  span
+    color: #FFF !important
+  @include phone
+    padding-left: 75px
+
+.slide-fade-enter-active
+  transition: all .5s ease
+
+.slide-fade-leave-active
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1)
+
+.slide-fade-enter
+  transform: translateX(10px)
+  opacity: 0
+
+footer
+  color: #fff
+
+
+h1,h2,h3,p
+ margin: 10px 0px
+
+h1,h2,h3
+ color: $primary
+ font-weight: bold
+
+h1
+  font-size: 30px;
+h2
+  font-size: 22px;
+h3
+  font-size: 18px;
+
+.icon, .control.has-icons-left .icon, .control.has-icons-right .icon
+  color: $primary
+.404-header
+  @include phone
+    margin-top: 0px

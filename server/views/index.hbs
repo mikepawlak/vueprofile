@@ -1,0 +1,36 @@
+<div id="app" v-cloak>
+  <section class="hero is-primary is-medium has-bg-image">
+  <section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <router-link tag="span" to="/" exact>
+          &#60;mike/&#62;
+        </router-link>
+      </h1>
+      <h2 class="subtitle">
+        &nbsp;
+        <vue-typer id="heroSub"
+          @navigation="changeText"
+          :text='typed_text'
+          :repeat='0'
+          erase-style='clear'></vue-typer>
+      </h2>
+    </div>
+  </div>
+</section>
+
+  {{>navPost}}
+
+
+  <transition name="slide-fade">
+    <router-view></router-view>
+  </transition>
+
+
+{{>footer}}
+</div>
+<div style="text-align: center; padding-top: 10px" class="load-main">
+  <img src="public/dist/loading.gif" alt="loading...">
+  <h2 style="color: #9c9c9c; font-family: sans-serif;"><em>Loading...</em></h2>
+</div>
