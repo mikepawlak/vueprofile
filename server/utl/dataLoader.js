@@ -12,7 +12,7 @@ module.exports = function(dataSet) {
       return [
         {
           "title": "Front End Development",
-          "subtitle": "Pro nemore fabulas detraxit an. Cu vel detraxit qualisque similique.",
+          "subtitle": "A majority of my professional experience has been in front end development. I have a particular interest in creating elegent and effortless websites and have naturally been drawn to working on user facing code.",
           "content": "Lorem ipsum dolor sit amet, mel dicit labores eleifend at. Quidam elaboraret voluptatibus eu vim. Dico tritani an sed, malis appareat volutpat ad eam, ad elitr dicant putent vis. Sea at docendi appareat. Iusto debitis perfecto sit et, id dolor sadipscing sed, et pri dicta corrumpit. No cum paulo noluisse petentium.",
           "pills": ["VueJS", "Webpack", "Javascript", "CSS/SASS"]
         },
@@ -21,6 +21,18 @@ module.exports = function(dataSet) {
           "subtitle": "Te mei omnesque scriptorem, vim et indoctum praesent scripserit. Ex mea hinc dolores.",
           "content": "His id maiorum ocurreret deterruisset, pri te dicat ceteros, vis doctus deserunt at. Primis docendi persecuti vix no, mei ea wisi natum menandri. Ius novum ignota adversarium no, pri ne feugait facilisis consetetur, eu reprimique liberavisse pri. An nusquam fierent his, officiis.",
           "pills": ["NodeJS", "Express", "MongoDB"]
+        },
+        {
+          "title": "Build Tools",
+          "subtitle": "Te mei omnesque scriptorem, vim et indoctum praesent scripserit. Ex mea hinc dolores.",
+          "content": "His id maiorum ocurreret deterruisset, pri te dicat ceteros, vis doctus deserunt at. Primis docendi persecuti vix no, mei ea wisi natum menandri. Ius novum ignota adversarium no, pri ne feugait facilisis consetetur, eu reprimique liberavisse pri. An nusquam fierent his, officiis.",
+          "pills": ["Git", "Mocha", "NPM", "Supertest", "Gimp"]
+        },
+        {
+          "title": "Project Management",
+          "subtitle": "Te mei omnesque scriptorem, vim et indoctum praesent scripserit. Ex mea hinc dolores.",
+          "content": "His id maiorum ocurreret deterruisset, pri te dicat ceteros, vis doctus deserunt at. Primis docendi persecuti vix no, mei ea wisi natum menandri. Ius novum ignota adversarium no, pri ne feugait facilisis consetetur, eu reprimique liberavisse pri. An nusquam fierent his, officiis.",
+          "pills" : []
         }
       ];
       break;
