@@ -1,23 +1,32 @@
+
+
 const express = require('express');
+const history = require('connect-history-api-fallback');
+const compression = require('compression');
 const path = require('path');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const app = express();
+
+
 const hbs = require('express-hbs');
 
+app.use(history({
+  index: '/'
+}));
+app.use(compression());
 
 app.engine('hbs', hbs.express4({
   partialsDir   : __dirname +'/views/partials',
   defaultLayout : __dirname +'/views/layouts/main',
   extname       : '.hbs',
   layoutsDir    : __dirname +'/views/layouts',
-}));
-
-app.set('view engine', 'hbs');
+})).set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.use('/public', express.static(path.join(__dirname, '../client')));
 app.use('/mod', express.static(path.join(__dirname, '../node_modules')));

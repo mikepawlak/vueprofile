@@ -3,7 +3,8 @@
     <div class="container">
       <div class="box">
         <h2>Projects</h2>
-        <p>Projects subtext</p>
+        <p>Here are some personal projects I created to showcase which technologies I am comfortable with. Some are designed explicitly for this portfolio, others I built to solve problems I had or to explore parts of the industry I wasn’t familiar with. </p>
+        <p>This website is also my most recent project and was built, full-stack, by me using Node, Express, Vue, SASS, and Webpack. The site in full is available on <a url="#">my github</a>.</p>
       </div>
       <div class="columns is-multiline">
         <div class="column is-one-third-desktop is-half-tablet" v-for="(project, i) in projects.get()">
@@ -12,7 +13,7 @@
                 @click="focusProject(i)">
               <div class="project-tile level-item">
                 <p><b>{{project.title}}</b></p>
-                <p><e{{project.subtitle}}</em></p>
+                <p><em>{{project.subtitle}}</em></p>
               </div>
             </a>
           </div>
@@ -24,14 +25,26 @@
           <div class="container">
             <carousel :per-page="1" ref="carousel" :navigate-to="0">
               <slide v-for="img in modal.focusedProject.galleryImages">
-                <figure class="image is-square">
+                <figure class="image">
                   <img v-bind:src="'/public/uncomputed/projects/' + img">
                 </figure>
+                <transition name="slide">
+                  <div class="carousel-bottom-text is-overlay">
+                      <div>
+                        <span @click="toggleContent()"
+                              class="is-pulled-right hide-btn"
+                              v-html="getMoreIcon()">
+                        </span>
+                      </div>
+                      <transition name="slide">
+                        <div v-if="modal.showContent" v-html="modal.focusedProject.content"></div>
+                      </transition>
+                  </div>
+                </transition>
               </slide>
+
             </carousel>
-            <div class="carousel-bottom-text is-overlay">
-                <p>{{ modal.focusedProject.content }}</p>
-            </div>
+
           </div>
         </div>
         <button class="modal-close is-large" aria-label="close" @click="closeFocusProject()"></button>
@@ -85,8 +98,9 @@ export default {
       projects : new ProjectHelper,
       modal : {
         isActive : false,
+        showContent : true,
         focusedProject : {
-          content: "",
+          content: [],
           galleryImages : ['default.png'],
           mainImgeSrc : 'default.png',
           pills : [],
@@ -104,14 +118,21 @@ export default {
     focusProject(index) {
       this.modal.focusedProject = this.projects.get(index);
       this.modal.isActive = true;
-      console.log(this.$refs.carousel.pageCount);
     },
     closeFocusProject() {
       this.modal.isActive = false;
       this.modal.focusedProject = this.projects.createDefault();
+      this.modal.showContent = true;
     },
-    slideChange(direction) {
-
+    toggleContent() {
+      this.modal.showContent = !this.modal.showContent;
+    },
+    getMoreIcon() {
+      if (this.modal.showContent) {
+        return `<i class="fas fa-angle-down"></i>`;
+      } else {
+        return `<i class="fas fa-angle-up"></i>`;
+      }
     }
   },
   mounted() {
@@ -127,6 +148,14 @@ export default {
 
 </script>
 <style lang='sass'>
+  /*transition styles*/
+  .slide-enter-active, .slide-leave-active
+    transition: .3s
+
+  .slide-enter, .slide-leave-to
+    transform: translate(0, 100%)
+
+  /*component styles*/
   .project-container
     height: 250px
     background-size: cover !important
@@ -135,15 +164,30 @@ export default {
     &:hover
       cursor: pointer
     .project-tile
+      width: 100%;
       background-color: rgba(0,0,0,.5)
       color: #FFF
       flex-direction: column
       margin-right: 0px !important
+      p
+        text-align: center;
   .carousel-bottom-text
     top: auto
-    bottom: 64px
     color: #FFF
     background: rgba(0,0,0,.5)
     padding: 5px
+    max-height: 100%
+    overflow: scroll
+  .modal-content
+    .container
+      width: 100%
+  .hide-btn
+    display: inline-block
+  .hide-btn:hover
+    cursor: pointer
+    @media screen and (min-width: 769px)
+      .modal-content
+        max-height: calc(100vh - -3px)
+
 
 </style>

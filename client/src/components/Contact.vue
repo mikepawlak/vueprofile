@@ -35,7 +35,7 @@
                  <i class="fab fa-github"></i>
                </span>
              </a>
-             <a class="button is-medium tooltip" data-tooltip="Medium" href="https://medium.com/@mpawlak719" target="_blank">
+             <a class="button is-medium tooltip" data-tooltip="Medium" href="https://medium.com/@mpawlak719/has-recommended" target="_blank">
                <span class="icon">
                  <i class="fab fa-medium"></i>
                </span>

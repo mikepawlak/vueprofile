@@ -26,6 +26,15 @@ import VueRouter from 'vue-router';
   ];
 
 export default new VueRouter({
+    mode: 'history',
+    scrollBehavior: function(to, from, savedPosition) {
+        if (to.hash) {
+            console.log(to.hash);
+            return {selector: to.hash}
+        } else {
+            return { x: 0, y: 0 }
+        }
+    },
   routes,
 
   linkActiveClass: 'is-active'

@@ -2,7 +2,7 @@
 Uses nodemailer and gmail credentials passed as arguments */
 const mailer = require('nodemailer');
 
-let auth = {
+const auth = {
   user: process.argv[2],
   pass: process.argv[3],
   validated: (process.argv[2] && process.argv[3])
@@ -34,7 +34,7 @@ module.exports = (messageData) => {
     html: messageText
   };
 
-  //promise in a promise feels super weird, may be a better way to do this
+  //promise chain like this feels super weird, may be a better way to do this
   return new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions).then((succ) => {
       resolve(succ);
