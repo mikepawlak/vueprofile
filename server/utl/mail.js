@@ -12,10 +12,11 @@ let transporter = mailer.createTransport({
   service: 'gmail',
   auth: auth
 });
-
+console.log(process.argv);
 
 module.exports = (messageData) => {
   if (!auth.validated) {
+    console.log(auth);
     throw ("ERROR: Mail credentials invalid or undefined");
   }
   //construct message text
