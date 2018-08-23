@@ -6,49 +6,6 @@
         <p>Here are some personal projects I created to showcase which technologies I am comfortable with. Some are designed explicitly for this portfolio, others I built to solve problems I had or to explore parts of the industry I wasn’t familiar with. </p>
         <p>This website is also my most recent project and was built, full-stack, by me using Node, Express, Vue, SASS, and Webpack. The site in full is available on <a url="#">my github</a>.</p>
       </div>
-      <div class="columns is-multiline">
-        <div class="column is-one-third-desktop is-half-tablet" v-for="(project, i) in projects.get()">
-          <div class="box project-container level is-mobile is-radiusless"
-                v-bind:style="{ background: getBackground(project.mainImageSrc) }"
-                @click="focusProject(i)">
-              <div class="project-tile level-item">
-                <p><b>{{project.title}}</b></p>
-                <p><em>{{project.subtitle}}</em></p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="modal" v-bind:class="{ 'is-active' : modal.isActive }">
-        <div class="modal-background" @click="closeFocusProject()"></div>
-        <div class="modal-content">
-          <div class="container">
-            <carousel :per-page="1" ref="carousel" :navigate-to="0">
-              <slide v-for="img in modal.focusedProject.galleryImages">
-                <figure class="image">
-                  <img v-bind:src="'/public/uncomputed/projects/' + img">
-                </figure>
-                <transition name="slide">
-                  <div class="carousel-bottom-text is-overlay">
-                      <div>
-                        <span @click="toggleContent()"
-                              class="is-pulled-right hide-btn"
-                              v-html="getMoreIcon()">
-                        </span>
-                      </div>
-                      <transition name="slide">
-                        <div v-if="modal.showContent" v-html="modal.focusedProject.content"></div>
-                      </transition>
-                  </div>
-                </transition>
-              </slide>
-
-            </carousel>
-
-          </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" @click="closeFocusProject()"></button>
-      </div>
     </div>
   </section>
 </template>

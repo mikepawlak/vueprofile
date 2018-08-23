@@ -12,6 +12,8 @@
         <h2>Projects</h2>
         <p>I've highlighted several projects on this page that show my growth and areas of interest. While this isn't an exhaustive list, I think it shows my strengths both in development and design for the web.</p>
         <p><strong>Click <router-link tag="a" to="/projects">here</router-link> to see my projects</strong></p>
+        <hr/>
+        <h2 class="has-text-centered"><router-link tag="a" to="/contact">Click here to get in touch</router-link></h2>
       </div>
     </div>
   </section>
@@ -39,4 +41,7 @@
     float: right
     -webkit-shape-outside: circle()
     shape-outside: circle()
+  hr
+    background-color: #999
+    height: 2px;
 </style>

@@ -9,9 +9,10 @@
           <li v-for="skill in skillsArray"><a :href="'#' + createLinkId(skill.title)">{{ skill.title }}</a></li>
         </ul>
       </div>
-      <div class="box" v-for="skill in skillsArray">
+      <div class="box" v-for="(skill, i) in skillsArray">
         <h3 :id="createLinkId(skill.title)">{{ skill.title }}</h3>
         <p><em>{{ skill.subtitle }}</em></p>
+        <img class="skill-img is-pulled-right" v-bind:src="'/public/uncomputed/skills/' + getImg(i) + '.png'" v-bind:alt="getImg(i)">
         <p>{{ skill.content }}</p>
         <p class="tags"><span class="tag is-rounded is-medium is-primary" v-for="pill in skill.pills">{{ pill }}</span></p>
         <a class="is-hidden-desktop" href="#top">back to top</a>
@@ -34,6 +35,11 @@ export default {
   methods : {
     createLinkId(title) {
       return title.replace(/ /g,"_");
+    },
+    getImg(index) {
+      let imgArray = ['frontend', 'backend', 'devops', 'projectManagement'];
+
+      return imgArray[index];
     }
   },
   mounted() {
@@ -51,5 +57,20 @@ export default {
 <style lang='sass'>
   .box hr
     background-color: #999
+  .skill-img
+    border-radius: 50%
+    max-width: 300px
+    width: 20%
+    margin: 10px
+    shape-outside: circle()
 
+  @media screen and (max-width: 600px)
+    .skill-img
+      width: 30%
+      float: none !important
+      margin: 0px auto
+      display: block
+  @media screen and (min-width: 1250px)
+    .skill-img
+      max-width: 150px
 </style>

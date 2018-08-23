@@ -6,12 +6,6 @@
           <div class="box">
             <h2>Get In Touch</h2>
             <p>
-              <a class="button" href="tel:9206454654">
-                <span class="icon">
-                  <i class="fa fa-phone"></i>
-                </span>
-                <span>(920)645-4654</span>
-              </a>
               <a class="button" href="mailto:mpawlak719@gmail.com">
                 <span class="icon">
                   <i class="fa fa-envelope-open"></i>
