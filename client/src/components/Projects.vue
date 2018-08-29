@@ -9,7 +9,7 @@
       <div class="project-wrapper box columns is-multiline is-paddingless" v-for="(project, i) in projects.projectArray">
         <div class="column">
           <h2 class="is-inline-block">{{project.title}}</h2>
-          <p class="is-pulled-right"> <a v-for="link in project.links" class="button is-medium tooltip" v-bind:data-tooltip="link.name" href="link.path" target="_blank" v-html="link.icon"></a></p>
+          <p class="is-pulled-right"> <a v-for="link in project.links" class="button is-medium tooltip" v-bind:data-tooltip="link.name" v-bind:href="link.path" target="_blank" v-html="link.icon"></a></p>
           <p><em>{{project.subtitle}}</em></p>
           <p><span v-for="pill in project.pills" class="tag is-rounded is-medium is-primary" style="margin: 2px">{{pill}}</span> </p>
           <p v-if="!project.isExpanded"><a @click="toggle(i)">more</a></p>
