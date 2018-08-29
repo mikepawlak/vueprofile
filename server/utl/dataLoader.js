@@ -50,7 +50,7 @@ module.exports = function(dataSet) {
           "links" : [
             {
               "name" : "Github",
-              "link" : "https://github.com/mikepawlak/dndpdfreader",
+              "path" : "https://github.com/mikepawlak/dndpdfreader",
               "icon" : "<span class='icon'><i class='fab fa-github'></i></span>"
             }
           ]
@@ -65,12 +65,12 @@ module.exports = function(dataSet) {
           "links" : [
             {
               "name" : "Github",
-              "link" : "https://github.com/mikepawlak/robopong",
+              "path" : "https://github.com/mikepawlak/robopong",
               "icon" : "<span class='icon'><i class='fab fa-github'></i></span>"
             },
             // {
             //   "name" : "Live Site",
-            //   "link" : "",
+            //   "path" : "",
             //   "icon" : "<span class='icon'><i class='fa fa-window-maximize'></i></span>"
             // }
           ]
@@ -84,7 +84,7 @@ module.exports = function(dataSet) {
           "links" : [
             {
               "name" : "Github",
-              "link" : "https://github.com/mikepawlak/dop",
+              "path" : "https://github.com/mikepawlak/dop",
               "icon" : "<span class='icon'><i class='fab fa-github'></i></span>"
             }
           ]
