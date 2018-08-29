@@ -9,7 +9,8 @@
     "start": "NODE_ENV=production node ./server/bin/www",
     "dev:server": "NODE_ENV=development nodemon ./server/bin/www",
     "dev": "cross-env NODE_ENV=development webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "update-server": "git pull && cross-env NODE_ENV=production webpack --progress --hide-modules && pm2 restart Portfolio"
   },
   "dependencies": {
     "axios": "^0.18.0",
