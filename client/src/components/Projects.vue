@@ -4,7 +4,27 @@
       <div class="box">
         <h2>Projects</h2>
         <p>Here are some personal projects I created to showcase which technologies I am comfortable with. Some are designed explicitly for this portfolio, others I built to solve problems I had or to explore parts of the industry I wasn’t familiar with. </p>
-        <p>This website is also my most recent project and was built, full-stack, by me using Node, Express, Vue, SASS, and Webpack. The site in full is available on <a url="#">my github</a>.</p>
+        <p></p>
+      </div>
+      <div class="project-wrapper box columns is-multiline is-paddingless" v-for="(project, i) in projects.projectArray">
+        <div class="column">
+          <h2 class="is-inline-block">{{project.title}}</h2>
+          <p class="is-pulled-right"> <a v-for="link in project.links" class="button is-medium tooltip" v-bind:data-tooltip="link.name" href="link.path" target="_blank" v-html="link.icon"></a></p>
+          <p><em>{{project.subtitle}}</em></p>
+          <p><span v-for="pill in project.pills" class="tag is-rounded is-medium is-primary" style="margin: 2px">{{pill}}</span> </p>
+          <p v-if="!project.isExpanded"><a @click="toggle(i)">more</a></p>
+        </div>
+        <div class="column is-one-quarter is-paddingless">
+          <img class="" v-bind:src="'/public/uncomputed/projects/' + project.imageSrc" alt="project.title" >
+        </div>
+        <div class="column is-12">
+          <transition name="slide-fade">
+            <div v-if="project.isExpanded">
+              <div v-html="project.content"></div>
+              <p><a @click="toggle(i)">less</a></p>
+            </div>
+          </transition>
+        </div>
       </div>
     </div>
   </section>
@@ -13,7 +33,6 @@
 
 <script>
 import axios from 'axios';
-import { Carousel, Slide } from 'vue-carousel';
 
 class ProjectHelper {
   constructor() {
@@ -22,6 +41,7 @@ class ProjectHelper {
 
   pushProjects(arr) {
     arr.map((x) => {
+      x.isExpanded = false;
       this.projectArray.push(x);
     })
   }
@@ -29,67 +49,17 @@ class ProjectHelper {
   any() {
     return Object.keys(this.projectArray).length > 0 ? true : false;
   }
-
-  createDefault() {
-    return {
-      content: "",
-      galleryImages : ['default.png'],
-      mainImgeSrc : 'default.png',
-      pills : [],
-      subtitle: "",
-      title: ""
-    };
-  }
-
-  get(index = -1) {
-    return (this.projectArray[index]) ? this.projectArray[index] :  this.projectArray;
-  }
 }
 export default {
-  components: {
-    Carousel,
-    Slide
-  },
   data() {
     return {
-      projects : new ProjectHelper,
-      modal : {
-        isActive : false,
-        showContent : true,
-        focusedProject : {
-          content: [],
-          galleryImages : ['default.png'],
-          mainImgeSrc : 'default.png',
-          pills : [],
-          subtitle: "",
-          title: ""
-        },
-        activeImage: 0
-      },
+      projects : new ProjectHelper
     }
   },
   methods: {
-    getBackground(img) {
-      return `url('/public/uncomputed/projects/${img}') center center`;
-    },
-    focusProject(index) {
-      this.modal.focusedProject = this.projects.get(index);
-      this.modal.isActive = true;
-    },
-    closeFocusProject() {
-      this.modal.isActive = false;
-      this.modal.focusedProject = this.projects.createDefault();
-      this.modal.showContent = true;
-    },
-    toggleContent() {
-      this.modal.showContent = !this.modal.showContent;
-    },
-    getMoreIcon() {
-      if (this.modal.showContent) {
-        return `<i class="fas fa-angle-down"></i>`;
-      } else {
-        return `<i class="fas fa-angle-up"></i>`;
-      }
+    toggle(i = 0) {
+      this.projectsArray[i].isExpanded = !this.projectsArray[i].isExpanded;
+      console.log("Worked");
     }
   },
   mounted() {
@@ -113,38 +83,7 @@ export default {
     transform: translate(0, 100%)
 
   /*component styles*/
-  .project-container
-    height: 250px
-    background-size: cover !important
-    padding: 0
-    margin: 5px
-    &:hover
-      cursor: pointer
-    .project-tile
-      width: 100%;
-      background-color: rgba(0,0,0,.5)
-      color: #FFF
-      flex-direction: column
-      margin-right: 0px !important
-      p
-        text-align: center;
-  .carousel-bottom-text
-    top: auto
-    color: #FFF
-    background: rgba(0,0,0,.5)
-    padding: 5px
-    max-height: 100%
-    overflow: scroll
-  .modal-content
-    .container
-      width: 100%
-  .hide-btn
-    display: inline-block
-  .hide-btn:hover
-    cursor: pointer
-    @media screen and (min-width: 769px)
-      .modal-content
-        max-height: calc(100vh - -3px)
-
+  .project-wrapper
+    margin: 10px
 
 </style>
