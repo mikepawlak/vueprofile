@@ -1,8 +1,10 @@
 {
-  "name": "portfolio",
-  "description": "Mike Pawlak's developer portfolio site",
+  "name": "fuckingaround",
+  "description": "A Vue.js project",
+  "version": "1.0.0",
   "author": "mikepawlak <mpawlak719@gmail.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "NODE_ENV=production node ./server/bin/www",
     "dev:server": "NODE_ENV=development nodemon ./server/bin/www",
