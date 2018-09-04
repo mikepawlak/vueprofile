@@ -10,6 +10,8 @@ const app = express();
 
 
 const hbs = require('express-hbs');
+
+
 app.use(compression());
 
 app.engine('hbs', hbs.express4({
@@ -27,10 +29,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static(path.join(__dirname, '../client')));
 app.use('/mod', express.static(path.join(__dirname, '../node_modules')));
 
+app.use(history({
+  index: '/',
+  rewrites: [{
+    from: /\/not-found/, to: '/not-found'
+  }]
+}));
 
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+
 
 const data = require('./routes/data.js');
 app.use('/data', data);
@@ -47,10 +57,6 @@ app.get("*", (req, res) => {
   res.status(404);
   res.render('not-found');
 });
-
-app.use(history({
-  index: '/'
-}));
 
 app.listen(8080, () => {
   console.log("Listening on 8080");

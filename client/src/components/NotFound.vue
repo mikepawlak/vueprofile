@@ -10,7 +10,7 @@
 
 export default {
   mounted() {
-    window.location.href = "/not-found"
+    window.location.href = "//www.mikepawlak.com/not-found"
   }
 }
 
