@@ -10,10 +10,6 @@ const app = express();
 
 
 const hbs = require('express-hbs');
-
-app.use(history({
-  index: '/'
-}));
 app.use(compression());
 
 app.engine('hbs', hbs.express4({
@@ -51,6 +47,10 @@ app.get("*", (req, res) => {
   res.status(404);
   res.render('not-found');
 });
+
+app.use(history({
+  index: '/'
+}));
 
 app.listen(8080, () => {
   console.log("Listening on 8080");
