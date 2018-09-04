@@ -16,6 +16,8 @@ npm install && npm run build
 
 # serve website
 npm start
-```
 
+# the site is now being served on localhost:8080
+```
+ 
 
