@@ -17,7 +17,12 @@ import VueRouter from 'vue-router';
     {
       path: "/contact",
       component: require("./components/Contact.vue").default
+    },
+    {
+      path: "*",
+      component: require("./components/NotFound.vue").default
     }
+
   ];
 
 export default new VueRouter({
