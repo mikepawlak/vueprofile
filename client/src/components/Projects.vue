@@ -4,7 +4,7 @@
       <div class="box">
         <h2>Projects</h2>
         <p>Here are some personal projects I created to showcase which technologies I am comfortable with. Some are designed explicitly for this portfolio, others I built to solve problems I had or to explore parts of the industry I wasn’t familiar with. </p>
-        <p></p>
+        <p>This portfolio site is also my most recent project. It was built by me in its entirety, I’ve made the source code available on <a href=”https://github.com/mikepawlak/vueprofile”>Github</a>.</p>
       </div>
       <div class="project-wrapper box columns is-multiline is-paddingless" v-for="(project, i) in projects.projectArray">
         <div class="column">

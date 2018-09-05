@@ -32,7 +32,7 @@ module.exports = function(dataSet) {
         {
           "title": "Project Management",
           "subtitle": "While I made this site to showcase my technical skills, soft skills can be just as important to a developer as technical ones are. I have a strong background in communicating with clients and leading and working with teams.",
-          "content": "I grew up as a fairly shy and quiet kid, as most people willing to sit in front of a computer for hours on end can relate to. Because of this I have paid particular attention to the development of my communication skills. I seek out responsibilities that include a public speaking, mentorship, or management component and therefore am very comfortable working with people. This translates to the ability to engage in communication effectively in several settings, both as a leader and follower.",
+          "content": "I have paid particular attention to the development of my communications and leadership skills, which has served me well in both non-technical and technical settings. I seek out responsibilities that include a public speaking, mentorship, or management component and therefore am very comfortable working with people. This translates to the ability to engage in communication effectively in several settings, both as a leader and follower.",
           "pills" : ["Timeline Development", "Client Communications", "Training and Mentorship", "Public Speaking", "Meeting Management"]
         }
       ];
@@ -58,7 +58,7 @@ module.exports = function(dataSet) {
         {
           "title": 'Javascript Pong',
           "subtitle": "A simple pong game written in JavaScript",
-          "content" : `<p> I created this basic browser game to run neural networks using Brain.js. Unfortunately, so far, I have been unable to train a machine learning player but the environment is still a pretty fun pong game. Since this game hasn&rsquo;t been created with the express purpose of being a user-facing game, it only currently works in desktop. I set up a computer vs computer demo for mobile.  </p>
+          "content" : `<p> I created this basic browser game to run neural networks using Brain.js. Unfortunately, so far, I have been unable to train a machine learning player but the environment is still a pretty fun pong game. Since this game hasn&rsquo;t been created with the express purpose of being a user-facing game, it only currently works in desktop.</p>
                        <p> I used the P5 canvas game library and webpack on top of a simple express server. I decided to go with material design concepts in creating the environment since I like the aesthetic. In the future I would love to have a well trained network to have users play against and create mobile player support.  </p>`,
           "imageSrc": "pong.png",
           "pills": ["Webpack", "P5", "Express"],
@@ -78,7 +78,7 @@ module.exports = function(dataSet) {
         {
           "title": 'Data On Politics',
           "subtitle": "A civic engagement tool and blog site",
-          "content": "<p>Data On Politics was a site I created during a semester break that consisted of several tools and a blog dedicated to political information and news using a classic MEAN setup. I combined datasets found in public data and legislative APIs, Wikipedia, and Google’s Knowledge Graph API to gather data and display by the state that the user entered. I took down the site fairly quickly as it became difficult to maintain but the full code is available on <a href=””>Github</a>. </p>",
+          "content": "<p>Data On Politics was a site I created during a semester break that consisted of several tools and a blog dedicated to political information and news using a classic MEAN setup. I combined datasets found in public data and legislative APIs, Wikipedia, and Google’s Knowledge Graph API to gather data and display by the state that the user entered. I took down the site fairly quickly as it became difficult to maintain but the full code is available on <a href=”https://github.com/mikepawlak/dop”>Github</a>. </p>",
           "imageSrc": "dop.png",
           "pills": ["Express", "Handlebars", "MongoDB", "AngularJS"],
           "links" : [
