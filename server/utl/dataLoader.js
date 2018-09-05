@@ -78,7 +78,7 @@ module.exports = function(dataSet) {
         {
           "title": 'Data On Politics',
           "subtitle": "A civic engagement tool and blog site",
-          "content": "<p>Data On Politics was a site I created during a semester break that consisted of several tools and a blog dedicated to political information and news using a classic MEAN setup. I combined datasets found in public data and legislative APIs, Wikipedia, and Google’s Knowledge Graph API to gather data and display by the state that the user entered. I took down the site fairly quickly as it became difficult to maintain but the full code is available on <a href=”https://github.com/mikepawlak/dop”>Github</a>. </p>",
+          "content": "<p>Data On Politics was a site I created during a semester break that consisted of several tools and a blog dedicated to political information and news using a classic MEAN setup. I combined datasets found in public data and legislative APIs, Wikipedia, and Google’s Knowledge Graph API to gather data and display by the state that the user entered. I took down the site fairly quickly as it became difficult to maintain but the full code is available on <a href='https://github.com/mikepawlak/dop'>Github</a>. </p>",
           "imageSrc": "dop.png",
           "pills": ["Express", "Handlebars", "MongoDB", "AngularJS"],
           "links" : [
